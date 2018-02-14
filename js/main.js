@@ -1,8 +1,8 @@
 let restaurants,
-  neighborhoods,
-  cuisines
-var map
-var markers = []
+    neighborhoods,
+    cuisines;
+var map,
+    markers = [];
 
 /**
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
@@ -143,24 +143,28 @@ createRestaurantHTML = (restaurant) => {
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
   li.append(image);
 
+  const contentWrapper = document.createElement('div');
+  contentWrapper.classList.add('content-wrapper');
+  li.append(contentWrapper);
+
   const name = document.createElement('h1');
   name.innerHTML = restaurant.name;
-  li.append(name);
+  contentWrapper.append(name);
 
   const neighborhood = document.createElement('p');
   neighborhood.innerHTML = restaurant.neighborhood;
-  li.append(neighborhood);
+  contentWrapper.append(neighborhood);
 
   const address = document.createElement('p');
   address.innerHTML = restaurant.address;
-  li.append(address);
+  contentWrapper.append(address);
 
   const more = document.createElement('a');
   more.innerHTML = 'View Details';
   more.href = DBHelper.urlForRestaurant(restaurant);
-  li.append(more)
+  contentWrapper.append(more);
 
-  return li
+  return li;
 }
 
 /**
