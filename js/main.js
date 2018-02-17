@@ -150,7 +150,7 @@ createRestaurantHTML = (restaurant) => {
   contentWrapper.classList.add('content-wrapper');
   li.append(contentWrapper);
 
-  const name = document.createElement('h1');
+  const name = document.createElement('h2');
   name.innerHTML = restaurant.name;
   contentWrapper.append(name);
 
