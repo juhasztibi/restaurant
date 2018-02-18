@@ -346,12 +346,14 @@ nav h1 a {
 		height: 300px;
 		top: 0;
 		margin-top: 80px;
+		order: 1;
 	}
 
 	#restaurant-container,
 	#reviews-container {
 		width: 100%;
 		padding: 20px;
+		order: 2;
 	}
 
 	#breadcrumb {
