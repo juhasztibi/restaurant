@@ -53,7 +53,7 @@ self.addEventListener("fetch", function(event) {
         function fetchedFromNetwork(response) {
           var cacheCopy = response.clone();
           caches
-            .open(version + 'pages')
+            .open(version + 'offline')
             .then(function add(cache) {
               return cache.put(event.request, cacheCopy);
             })

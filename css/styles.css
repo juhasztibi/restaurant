@@ -159,7 +159,7 @@ nav h1 a {
 	margin: 15px;
 	min-height: 380px;
 	text-align: left;
-	width: 290px;
+	width: calc(100% / 4 - 30px);
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: column;
@@ -329,6 +329,11 @@ nav h1 a {
 	color: #666;
 }
 /* ====================== Breakpoints ====================== */
+@media all and (max-width: 1024px) {
+	#restaurants-list li {
+		width: calc(100% / 3 - 30px);
+	}
+}
 @media all and (max-width: 736px) {
 	#maincontent {
 		display: flex;
@@ -341,10 +346,6 @@ nav h1 a {
 		height: 300px;
 		top: 0;
 		margin-top: 80px;
-	}
-
-	#restaurant-container {
-
 	}
 
 	#restaurant-container,
@@ -381,8 +382,7 @@ nav h1 a {
 	.filter-options select {
 		width: calc(50% - 20px);
 	}
-}
-@media all and (max-width: 640px) {
+
 	#restaurants-list li {
 		width: 100%;
 	}
@@ -390,5 +390,8 @@ nav h1 a {
 @media all and (max-width: 432px) {
 	.filter-options select {
 		width: 100%;
+	}
+	#restaurants-list li {
+		min-width: 290px;
 	}
 }
