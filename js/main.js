@@ -1,3 +1,17 @@
+/**
+* Register service worker
+*/
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('../worker.js').then(function(registration) {
+      console.log('ServiceWorker registration successful!');
+    }, function(err) {
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+
 let restaurants,
     neighborhoods,
     cuisines;
@@ -182,19 +196,5 @@ addMarkersToMap = (restaurants = self.restaurants) => {
       window.location.href = marker.url
     });
     self.markers.push(marker);
-  });
-}
-
-/**
-* Register service worker
-*/
-
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', function() {
-    navigator.serviceWorker.register('/js/worker.js').then(function(registration) {
-      console.log('ServiceWorker registration successful!');
-    }, function(err) {
-      console.log('ServiceWorker registration failed: ', err);
-    });
   });
 }
